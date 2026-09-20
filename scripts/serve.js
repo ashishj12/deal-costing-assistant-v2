@@ -2,7 +2,6 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-// Minimal .env loader (no dependency). Real environment variables win.
 try {
   const envFile = fs.readFileSync(path.join(__dirname, "..", ".env"), "utf8");
   for (const line of envFile.split(/\r?\n/)) {
@@ -36,11 +35,15 @@ http
   .createServer((req, res) => {
     // Runtime provider discovery. The API key never reaches the browser.
     if (req.url === "/api/config") {
-      return send(res, 200, { provider: LIVE ? "gemini" : "mock", model: MODEL });
+      return send(res, 200, {
+        provider: LIVE ? "gemini" : "mock",
+        model: MODEL,
+      });
     }
     // Server-side proxy: the browser posts the prompt, the key is added here.
     if (req.method === "POST" && (req.url || "").split("?")[0] === "/api/ai") {
-      if (!LIVE) return send(res, 503, { error: "Live AI provider not configured" });
+      if (!LIVE)
+        return send(res, 503, { error: "Live AI provider not configured" });
       const chunks = [];
       req.on("data", (c) => chunks.push(c));
       req.on("end", async () => {

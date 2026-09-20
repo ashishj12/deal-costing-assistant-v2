@@ -1,5 +1,3 @@
-/** Stable, prefixed, never-reused identifiers. */
-
 export const ID_PATTERNS = {
   requirement: /^REQ-\d{3}$/,
   assumption: /^ASM-\d{3}$/,

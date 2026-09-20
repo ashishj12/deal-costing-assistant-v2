@@ -2,7 +2,11 @@ import * as path from "path";
 
 const { execSync, spawn } = require("child_process") as {
   execSync: (cmd: string, o: { cwd: string; stdio: string }) => void;
-  spawn: (cmd: string, args: string[], o: { cwd: string; stdio: string }) => unknown;
+  spawn: (
+    cmd: string,
+    args: string[],
+    o: { cwd: string; stdio: string },
+  ) => unknown;
 };
 
 const root = path.resolve(__dirname, "..");

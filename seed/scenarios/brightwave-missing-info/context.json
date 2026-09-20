@@ -26,8 +26,5 @@
     "teamCapacity": 4,
     "targetDeadlineWeeks": null
   },
-  "sources": [
-    "Founder call notes.md",
-    "Founder follow-up email.txt"
-  ]
+  "sources": ["Founder call notes.md", "Founder follow-up email.txt"]
 }

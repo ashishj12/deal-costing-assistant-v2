@@ -883,5 +883,13 @@ td.wrap {
   align-items: center;
 }
 
-.scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.scenario-grid .panel .body{display:flex;flex-direction:column;gap:8px}
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.scenario-grid .panel .body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

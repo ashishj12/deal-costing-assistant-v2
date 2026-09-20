@@ -63,7 +63,10 @@ export function intakeView(store: Store, rerender: () => void): HTMLElement {
           "div",
           { class: "body" },
           el("strong", { text: scenario.title }),
-          el("p", { class: "hint", text: `${scenario.shape}. ${scenario.summary}` }),
+          el("p", {
+            class: "hint",
+            text: `${scenario.shape}. ${scenario.summary}`,
+          }),
           button("Load this scenario", {
             small: true,
             onClick: () => {

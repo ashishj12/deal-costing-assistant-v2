@@ -17,7 +17,10 @@ async function runFullFlow(id: ScenarioId): Promise<Store> {
   return Object.assign(store, { __model: model });
 }
 
-async function completeFlow(store: Store, resolveQuestions: boolean): Promise<void> {
+async function completeFlow(
+  store: Store,
+  resolveQuestions: boolean,
+): Promise<void> {
   for (const q of store.state.model.questions) {
     if (resolveQuestions || q.blocking) {
       store.resolveQuestion(q.id, "Confirmed with the customer.");
@@ -86,7 +89,7 @@ describe("seed scenarios (mock AI mode, offline)", () => {
     await completeFlow(store, true);
     const ai = store.state.artifacts.aiStrategy;
     expect(ai === null).toBe(false);
-    expect((ai?.useCases.length ?? 0)).toBeGreaterThan(0);
+    expect(ai?.useCases.length ?? 0).toBeGreaterThan(0);
     for (const u of ai?.useCases ?? []) {
       expect(u.humanReview.length).toBeGreaterThan(0);
       expect(u.evaluation.length).toBeGreaterThan(0);
@@ -134,7 +137,10 @@ describe("cross-document consistency checks", () => {
   });
 
   it("flags unjustified components and a cross-cloud service", () => {
-    const model = { ...seedModel(), configuration: { ...seedModel().configuration, cloud: "aws" as const } };
+    const model = {
+      ...seedModel(),
+      configuration: { ...seedModel().configuration, cloud: "aws" as const },
+    };
     const checks = runConsistencyChecks(model, {
       architecture: baseArch(),
       integrations: null,
@@ -148,7 +154,10 @@ describe("cross-document consistency checks", () => {
   });
 
   it("flags a configured cloud that differs from the architecture", () => {
-    const model = { ...seedModel(), configuration: { ...seedModel().configuration, cloud: "gcp" as const } };
+    const model = {
+      ...seedModel(),
+      configuration: { ...seedModel().configuration, cloud: "gcp" as const },
+    };
     const arch = baseArch();
     const checks = runConsistencyChecks(model, {
       architecture: arch,
@@ -162,7 +171,14 @@ describe("cross-document consistency checks", () => {
 
   it("reports missing estimation inputs explicitly", () => {
     const base = seedModel();
-    const model = { ...base, configuration: { ...base.configuration, targetDeadlineWeeks: null, expectedUsers: 0 } };
+    const model = {
+      ...base,
+      configuration: {
+        ...base.configuration,
+        targetDeadlineWeeks: null,
+        expectedUsers: 0,
+      },
+    };
     const checks = runConsistencyChecks(model, {
       architecture: null,
       integrations: null,
@@ -170,7 +186,9 @@ describe("cross-document consistency checks", () => {
       workstreams: null,
       estimate: null,
     });
-    const found = checks.find((c) => c.checkId === "QG-ESTIMATE-INPUTS-MISSING");
+    const found = checks.find(
+      (c) => c.checkId === "QG-ESTIMATE-INPUTS-MISSING",
+    );
     expect(found === undefined).toBe(false);
     expect(found?.title).toContain("target deadline");
     expect(found?.title).toContain("expected user volume");

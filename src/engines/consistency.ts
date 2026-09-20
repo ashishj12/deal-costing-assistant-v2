@@ -56,9 +56,7 @@ export function runConsistencyChecks(
 ): QualityCheck[] {
   const out: QualityCheck[] = [];
   const liveIds = new Set(
-    model.requirements
-      .filter((r) => r.status !== "rejected")
-      .map((r) => r.id),
+    model.requirements.filter((r) => r.status !== "rejected").map((r) => r.id),
   );
   const { architecture, integrations, aiStrategy, workstreams, estimate } =
     input;
@@ -201,7 +199,10 @@ export function runConsistencyChecks(
       );
     if (t.contingency !== cfg.contingency)
       problems.push("estimate contingency differs from configuration");
-    if (integrations && integrations.integrations.length !== cfg.externalSystemCount)
+    if (
+      integrations &&
+      integrations.integrations.length !== cfg.externalSystemCount
+    )
       problems.push(
         `configuration lists ${cfg.externalSystemCount} external system(s) but the integration design has ${integrations.integrations.length}`,
       );

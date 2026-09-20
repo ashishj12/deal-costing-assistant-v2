@@ -2,18 +2,47 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Expected structured outputs (validated at runtime by src/domain/schema.ts before any stage uses them)",
   "definitions": {
-    "provenance": { "enum": ["customer-stated", "ai-inferred", "assumed", "ai-recommendation"] },
+    "provenance": {
+      "enum": ["customer-stated", "ai-inferred", "assumed", "ai-recommendation"]
+    },
     "requirement": {
       "type": "object",
-      "required": ["id", "type", "description", "priority", "provenance", "status", "confidence"],
+      "required": [
+        "id",
+        "type",
+        "description",
+        "priority",
+        "provenance",
+        "status",
+        "confidence"
+      ],
       "properties": {
-        "id": { "type": "string", "description": "Structured ID, e.g. BR_01, FR_01, NFR_01, INT_01, DATA_01, SEC_01" },
-        "type": { "enum": ["functional", "non-functional", "integration", "data", "security", "compliance", "operational"] },
+        "id": {
+          "type": "string",
+          "description": "Structured ID, e.g. BR_01, FR_01, NFR_01, INT_01, DATA_01, SEC_01"
+        },
+        "type": {
+          "enum": [
+            "functional",
+            "non-functional",
+            "integration",
+            "data",
+            "security",
+            "compliance",
+            "operational"
+          ]
+        },
         "description": { "type": "string", "minLength": 10 },
         "priority": { "enum": ["must", "should", "could", "wont"] },
         "provenance": { "$ref": "#/definitions/provenance" },
-        "sourceSpan": { "type": ["object", "null"], "description": "Source id + character offsets; REQUIRED when provenance is customer-stated" },
-        "citationResolved": { "type": "boolean", "description": "True only if the quotation was located verbatim in the source text" },
+        "sourceSpan": {
+          "type": ["object", "null"],
+          "description": "Source id + character offsets; REQUIRED when provenance is customer-stated"
+        },
+        "citationResolved": {
+          "type": "boolean",
+          "description": "True only if the quotation was located verbatim in the source text"
+        },
         "dependencies": { "type": "array", "items": { "type": "string" } },
         "openQuestionIds": { "type": "array", "items": { "type": "string" } },
         "status": { "enum": ["draft", "in-review", "approved", "rejected"] },
@@ -22,11 +51,32 @@
     },
     "architectureComponent": {
       "type": "object",
-      "required": ["id", "name", "layer", "cloudService", "purpose", "rationale", "requirementIds"],
+      "required": [
+        "id",
+        "name",
+        "layer",
+        "cloudService",
+        "purpose",
+        "rationale",
+        "requirementIds"
+      ],
       "properties": {
         "id": { "type": "string" },
-        "layer": { "enum": ["edge", "application", "integration", "data", "ai", "security", "observability"] },
-        "cloudService": { "type": "string", "description": "Concrete service of the selected cloud, e.g. Azure Database for PostgreSQL Flexible Server" },
+        "layer": {
+          "enum": [
+            "edge",
+            "application",
+            "integration",
+            "data",
+            "ai",
+            "security",
+            "observability"
+          ]
+        },
+        "cloudService": {
+          "type": "string",
+          "description": "Concrete service of the selected cloud, e.g. Azure Database for PostgreSQL Flexible Server"
+        },
         "tradeoffs": { "type": "array", "items": { "type": "string" } },
         "securityNotes": { "type": "string" },
         "requirementIds": { "type": "array", "items": { "type": "string" } },
@@ -35,9 +85,19 @@
     },
     "integration": {
       "type": "object",
-      "required": ["id", "name", "sourceSystem", "targetSystem", "protocol", "direction", "requirementIds"],
+      "required": [
+        "id",
+        "name",
+        "sourceSystem",
+        "targetSystem",
+        "protocol",
+        "direction",
+        "requirementIds"
+      ],
       "properties": {
-        "protocol": { "enum": ["rest", "graphql", "soap", "event", "file", "jdbc"] },
+        "protocol": {
+          "enum": ["rest", "graphql", "soap", "event", "file", "jdbc"]
+        },
         "direction": { "enum": ["inbound", "outbound", "bidirectional"] },
         "authentication": { "type": "string" },
         "errorHandling": { "type": "string" },
@@ -49,7 +109,15 @@
       "type": "object",
       "required": ["id", "name", "pattern", "requirementIds"],
       "properties": {
-        "pattern": { "enum": ["rag", "classification", "extraction", "agent", "summarisation"] },
+        "pattern": {
+          "enum": [
+            "rag",
+            "classification",
+            "extraction",
+            "agent",
+            "summarisation"
+          ]
+        },
         "humanReview": { "type": "string" },
         "evaluation": { "type": "string" },
         "dataRequirements": { "type": "array", "items": { "type": "string" } }
@@ -58,19 +126,54 @@
     "workstreamProposal": {
       "type": "object",
       "additionalProperties": true,
-      "required": ["id", "name", "band", "bandRationale", "requirementIds", "roleMix", "priority"],
+      "required": [
+        "id",
+        "name",
+        "band",
+        "bandRationale",
+        "requirementIds",
+        "roleMix",
+        "priority"
+      ],
       "properties": {
-        "band": { "enum": ["S", "M", "L", "XL"], "description": "The ONLY effort signal a model may return. Hours, rates and cost are rejected if present." },
-        "roleMix": { "type": "object", "description": "Role -> share (0..1); must sum to 1" }
+        "band": {
+          "enum": ["S", "M", "L", "XL"],
+          "description": "The ONLY effort signal a model may return. Hours, rates and cost are rejected if present."
+        },
+        "roleMix": {
+          "type": "object",
+          "description": "Role -> share (0..1); must sum to 1"
+        }
       }
     },
     "estimate": {
       "type": "object",
       "description": "Produced only by src/engines/estimation.ts (deterministic).",
-      "required": ["workstreams", "totals", "confidence", "timeline", "exclusions", "rates"],
+      "required": [
+        "workstreams",
+        "totals",
+        "confidence",
+        "timeline",
+        "exclusions",
+        "rates"
+      ],
       "properties": {
-        "totals": { "type": "object", "required": ["lowHours", "highHours", "romLow", "romHigh", "contingency", "currency", "rateCardVersion"] },
-        "confidence": { "type": "object", "properties": { "label": { "enum": ["low", "medium", "high"] } } }
+        "totals": {
+          "type": "object",
+          "required": [
+            "lowHours",
+            "highHours",
+            "romLow",
+            "romHigh",
+            "contingency",
+            "currency",
+            "rateCardVersion"
+          ]
+        },
+        "confidence": {
+          "type": "object",
+          "properties": { "label": { "enum": ["low", "medium", "high"] } }
+        }
       }
     }
   }

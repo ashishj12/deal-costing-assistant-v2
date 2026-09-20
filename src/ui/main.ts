@@ -14,7 +14,10 @@ async function chooseProvider(): Promise<AiProvider> {
   try {
     const response = await fetch("/api/config", { cache: "no-store" });
     if (!response.ok) return new MockProvider();
-    const config = (await response.json()) as { provider?: string; model?: string };
+    const config = (await response.json()) as {
+      provider?: string;
+      model?: string;
+    };
     if (config.provider === "gemini") {
       return new GeminiProvider({
         apiKey: "server-side-proxy",
@@ -34,7 +37,10 @@ async function bootstrap(): Promise<void> {
   const root = document.getElementById("root");
   if (!root) throw new Error("Root element is missing from the document.");
 
-  const store = new Store(await chooseProvider(), new BrowserStorageRepository());
+  const store = new Store(
+    await chooseProvider(),
+    new BrowserStorageRepository(),
+  );
   const restored = await store.restore();
   if (!restored && !location.hash) location.hash = "#/overview";
   mountApp(root, store);

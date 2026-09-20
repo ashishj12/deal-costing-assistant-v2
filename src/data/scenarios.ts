@@ -1,11 +1,6 @@
 import { ScopeModel, SourceDocument } from "../domain/entities";
 import { createEmptyModel, makeSource, seedModel } from "./seed";
 
-/**
- * Built-in demonstration scenarios. Each one is a complete, offline-runnable
- * input (source documents + opportunity context + configuration) that works in
- * mock AI mode. Together they cover the four shapes the challenge asks for.
- */
 export type ScenarioId =
   | "northwind-modernisation"
   | "helix-integration"
@@ -169,8 +164,18 @@ export const SCENARIOS: readonly Scenario[] = [
           targetDeadlineWeeks: 28,
         },
         [
-          makeSource("SRC-001", "Helix RFP requirements v2.txt", "txt", HELIX_RFP),
-          makeSource("SRC-002", "Integration workshop notes.md", "md", HELIX_NOTES),
+          makeSource(
+            "SRC-001",
+            "Helix RFP requirements v2.txt",
+            "txt",
+            HELIX_RFP,
+          ),
+          makeSource(
+            "SRC-002",
+            "Integration workshop notes.md",
+            "md",
+            HELIX_NOTES,
+          ),
         ],
       ),
   },
@@ -206,8 +211,18 @@ export const SCENARIOS: readonly Scenario[] = [
           targetDeadlineWeeks: 24,
         },
         [
-          makeSource("SRC-001", "Claims assistant business brief.txt", "txt", MERIDIAN_BRIEF),
-          makeSource("SRC-002", "Steering meeting notes.md", "md", MERIDIAN_NOTES),
+          makeSource(
+            "SRC-001",
+            "Claims assistant business brief.txt",
+            "txt",
+            MERIDIAN_BRIEF,
+          ),
+          makeSource(
+            "SRC-002",
+            "Steering meeting notes.md",
+            "md",
+            MERIDIAN_NOTES,
+          ),
         ],
       ),
   },
@@ -242,8 +257,18 @@ export const SCENARIOS: readonly Scenario[] = [
           targetDeadlineWeeks: null,
         },
         [
-          makeSource("SRC-001", "Founder call notes.md", "md", BRIGHTWAVE_NOTES),
-          makeSource("SRC-002", "Founder follow-up email.txt", "txt", BRIGHTWAVE_EMAIL),
+          makeSource(
+            "SRC-001",
+            "Founder call notes.md",
+            "md",
+            BRIGHTWAVE_NOTES,
+          ),
+          makeSource(
+            "SRC-002",
+            "Founder follow-up email.txt",
+            "txt",
+            BRIGHTWAVE_EMAIL,
+          ),
         ],
       ),
   },
