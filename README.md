@@ -1,71 +1,76 @@
 # Deal Scoping Assistant
 
-Deal Scoping Assistant is a TypeScript-based pre-sales scoping workspace for turning raw customer material into a validated, traceable deal model. The application helps teams ingest customer requirements, resolve ambiguities, build a scope model, derive downstream artifacts, and produce a deterministic ROM estimate without treating AI output as customer fact.
+Deal Scoping Assistant is a TypeScript-based deal-scoping workspace for turning raw customer material into a traceable, validated, and decision-ready scope model. It helps pre-sales and solution teams ingest requirements, resolve ambiguity, preserve provenance, and generate deterministic estimates without mistaking AI output for customer fact.
 
-The project is designed for a very specific problem: ensuring AI-generated scoping content is clearly separated from customer statements, reviewable, and auditable before it is used in a proposal or estimate.
+The product is designed for one specific problem: ensuring AI-assisted scoping remains auditable, reviewable, and grounded in source material before it is used in a proposal or estimate.
 
 ## Why this project exists
 
-This tool exists to prevent a common failure mode in AI-assisted scoping: an AI guess being mistaken for a customer commitment.
+AI-generated scoping content is often treated as if it were customer truth. This project prevents that failure pattern by separating:
 
-Core design principles in this codebase:
+- customer-supplied statements from AI-generated interpretation
+- source-backed requirements from inferred assumptions
+- deterministic estimation logic from provider-suggested numbers
+- change impact from silent artifact regeneration
+
+### Core principles
 
 - One source of truth: the scope model drives PRD, architecture, data strategy, integration design, AI strategy, and estimation.
-- Provenance-first records: every derived item carries provenance, not just text.
+- Provenance-first records: every derived item carries explicit provenance and review status.
 - Customer statements are earned: a requirement must be re-linked to source text before being labeled as customer-stated.
-- AI never computes estimate numbers: provider output may suggest a band or rationale, but the actual hours, rate, and cost are computed deterministically from domain rules.
+- AI does not compute estimate numbers: provider output may suggest a band or rationale, but the actual hours, rate, and cost are computed via deterministic rules.
 - Change impact is explicit: downstream artifacts are updated through defined rules rather than silently regenerated.
 - Quality is enforced by the same validator used in the domain layer, preventing mismatched downstream checks.
 
 ## Product overview
 
-The application walks through a full scoping workflow:
+The app guides a full scoping workflow:
 
 1. Intake customer material from pasted text, Markdown, JSON, CSV, or bundled source documents.
 2. Extract and review requirements with provenance and citations.
 3. Resolve clarifying questions and approve the model.
 4. Generate scope items, capabilities, and PRD content.
-5. Choose a cloud provider or use recommendations.
+5. Choose or accept a cloud recommendation.
 6. Produce architecture, integration, AI, and data strategy artifacts.
 7. Review deterministic estimation inputs and outputs.
-8. Track changes and stale artifacts.
+8. Track stale artifacts and change impact.
 9. Run the quality gate and export the package.
 
-This is a static web application rather than a backend service. It renders a complete deal-scoping workspace directly in the browser and packages the final output as self-contained HTML.
+This is a static web application rather than a backend service. It renders the complete deal-scoping workspace directly in the browser and packages the final output as a self-contained HTML bundle.
 
-## Key features
+## Key capabilities
 
 ### Requirement intake and validation
 
-- Supports raw text and structured inputs.
-- Normalizes source documents and preserves original source excerpts.
+- Accepts raw text and structured input.
+- Normalizes and preserves original source excerpts.
 - Tracks source spans, citations, and source checksums.
-- Flags when a requirement is not truly grounded in customer material.
+- Flags requirements that are not sufficiently grounded in customer material.
 
 ### Provenance-aware scope modeling
 
-The domain layer models requirements, assumptions, risks, questions, capabilities, and scope items with provenance and review status fields. This keeps AI-generated content visibly distinct from customer-passed language and makes it easier to review and approve a scope model before it becomes a proposal artifact.
+The domain layer models requirements, assumptions, risks, questions, capabilities, and scope items with provenance and review status fields. This keeps AI-generated content visibly distinct from customer-passed language and makes approval and review explicit before a scope model becomes a proposal artifact.
 
 ### Deterministic estimation engine
 
-- Estimates are computed using fixed rules rather than AI-supplied numbers.
+- Computes estimates using fixed domain rules rather than AI-supplied values.
 - Accepts configuration inputs such as cloud, scale, compliance, user counts, concurrency tier, and productivity factors.
-- Produces a ROM estimate, role-based effort, critical-path timeline, and confidence score.
-- The pipeline blocks provider responses from injecting fields like hours, cost, price, or days.
+- Produces ROM estimate, role-based effort, critical-path timeline, and confidence score.
+- Rejects provider responses that attempt to inject numeric fields like hours, cost, price, or days.
 
 ### Change-impact analysis
 
-The workspace includes a staged change model that previews the impact of edits before regeneration. It identifies what is stale, what needs review, and which artifacts should be regenerated or left intact.
+The workspace previews the effect of edits before regeneration. It identifies stale artifacts, review items, and the artifacts that should or should not be regenerated.
 
 ### Quality gate and export package
 
-- Quality gate status is READY, REVIEW_REQUIRED, or BLOCKED.
-- A package export includes the canonical Markdown artifact and a Mermaid diagram.
-- Every exported deliverable can carry the project’s required disclaimer.
+- Exposes quality gate states: READY, REVIEW_REQUIRED, and BLOCKED.
+- Exports a canonical Markdown package and Mermaid diagram.
+- Keeps the project disclaimer and traceability requirements attached to the exported deliverables.
 
 ## Architecture at a glance
 
-The project is organized into a few distinct layers:
+The codebase is organized into a few well-defined layers:
 
 - Domain layer: schema, entities, validation, provenance, versioning
 - AI layer: provider abstraction, pipeline safety, citation handling
@@ -73,22 +78,22 @@ The project is organized into a few distinct layers:
 - Export layer: Markdown package generation and artifact packaging
 - UI layer: route-based workspace screens and interactive state management
 
-### Main directories
+### Repository layout
 
 ```text
 src/
   ai/
+    artifact-helpers.ts
+    citation-resolver.ts
+    envelope.ts
     gemini-provider.ts
     mock-provider.ts
     pipeline.ts
     provider.ts
-    citation-resolver.ts
-    artifact-helpers.ts
-    envelope.ts
   data/
     repository.ts
+    scenarios.ts
     seed.ts
-    scenarios.ts        # four demo scenarios
   domain/
     artifacts.ts
     entities.ts
@@ -100,7 +105,7 @@ src/
     versioning.ts
   engines/
     cloud-catalog.ts
-    consistency.ts      # cross-document checks
+    consistency.ts
     coverage.ts
     estimation.ts
     impact-rules.ts
@@ -128,10 +133,10 @@ tests/
   estimation.test.ts
   export.test.ts
   ids.test.ts
-  scenarios.test.ts
   impact.test.ts
   quality-gate.test.ts
   repository.test.ts
+  scenarios.test.ts
   schema.test.ts
   versioning.test.ts
 
@@ -147,9 +152,9 @@ scripts/
 
 - TypeScript
 - Node.js 20+
-- Vitest for tests
-- ESLint for linting
-- Custom TypeScript build and bundling pipeline
+- Vitest
+- TypeScript compiler for checks and validation
+- Custom build and bundling pipeline
 - Browser-rendered single-page UI
 
 ## Getting started
@@ -165,56 +170,54 @@ scripts/
 npm install
 ```
 
-### Run the app locally
-
-Build the bundle and serve it locally:
+### Start the app locally
 
 ```bash
 npm run dev
 ```
 
-This runs the build step and starts the local server at:
+This builds the app and serves it locally at:
 
 ```text
 http://localhost:5173
 ```
 
-### Production-style build
+### Production build
 
 ```bash
 npm run build
 ```
 
-This generates a self-contained HTML package in the `dist/` folder.
+This generates a self-contained HTML bundle in the `dist/` directory.
 
-### Start the static server
+### Serve the built output
 
 ```bash
 npm start
 ```
 
-This serves the built files from `dist/` using the local Node HTTP server.
+This serves the current `dist/` bundle through the local Node HTTP server.
 
-### Open built output directly
+### Open the built bundle directly
 
-You can also open `dist/index.html` directly in a browser. The result is a fully self-contained UI bundle with inline CSS and no external JS runtime dependencies beyond the Google Fonts declared in the HTML head, which fall back gracefully when unavailable.
+You can also open `dist/index.html` directly in a browser. The HTML bundle is self-contained and includes inline CSS; it does not require a backend runtime to render the UI.
 
 ## Available scripts
 
 ```bash
 npm run typecheck   # Type-check TypeScript without emitting output
-npm run test        # Run the project’s test suite
-npm run test:vitest # Run vitest directly
+npm run test        # Run the project test suite
+npm run test:vitest # Run Vitest directly
 npm run lint        # Strict TypeScript checks (unused code, fallthrough)
-npm run build        # Compile and bundle the app
+npm run build       # Compile and bundle the app
 npm run dev         # Build and serve the app locally
 npm start           # Serve the current dist bundle
 npm run verify      # Run typecheck, tests, and build
 ```
 
-## Workflow in the app
+## Typical workflow in the app
 
-The app is organized into route-based screens that follow a compliant proposal workflow:
+The application is organized into route-based screens that align with a compliant proposal workflow:
 
 1. Intake
    - upload or paste customer material
@@ -223,15 +226,15 @@ The app is organized into route-based screens that follow a compliant proposal w
 2. Requirements
    - review extracted requirements
    - resolve blocking questions
-   - approve scope model
+   - approve the scope model
 
 3. Scope & PRD
    - derive capabilities and functional scope
    - assemble PRD narrative and traceability links
 
 4. Architecture
-   - pick a cloud provider or accept a recommendation
-   - generate architecture artifacts from provider-specific service catalogues
+   - choose a cloud provider or accept the recommendation
+   - generate architecture artifacts from provider service catalogues
 
 5. Solution design
    - inspect data strategy, integrations, AI strategy, and supporting architecture
@@ -241,7 +244,7 @@ The app is organized into route-based screens that follow a compliant proposal w
    - inspect the factors that drove the estimate
 
 7. Changes
-   - detect stale artifacts and preview impact of edits
+   - detect stale artifacts and preview change impact
 
 8. Quality & export
    - validate model health
@@ -250,7 +253,7 @@ The app is organized into route-based screens that follow a compliant proposal w
 
 ## Seed scenario
 
-The project includes a built-in Northwind Logistics scenario designed to demonstrate the common edge cases this tool is meant to catch:
+The project includes a Northwind Logistics demo scenario designed to surface the edge cases this tool is meant to catch:
 
 - contradictory statements across source documents
 - explicit exclusions
@@ -258,18 +261,18 @@ The project includes a built-in Northwind Logistics scenario designed to demonst
 - a planted prompt-injection attempt
 - a change-sensitive architecture and estimate
 
-From the intake screen, click “Load seeded scenario” to walk through the full workflow.
+From the intake screen, click “Load seeded scenario” to explore the end-to-end workflow.
 
 ## Safety and governance model
 
-A critical part of this project is its guardrail design. The AI pipeline is intentionally constrained so that dangerous output cannot pass through unchecked.
+A critical part of this project is its guardrail design. The AI pipeline is intentionally constrained so dangerous output cannot pass through unchecked.
 
-Examples of the safety rules in the implementation:
+Examples of the safety rules in implementation:
 
 - provider-generated estimate fields are rejected before they can reach the domain model
 - customer-stated requirements require source-span validation
 - unresolved blocking questions prevent approval
-- quality gate checks are computed from the same validator used by the domain layer
+- quality gate checks are computed from the same validator used in the domain layer
 - stale artifacts are explicitly flagged when the scope model changes
 
 This keeps the tool aligned with its product goal: AI supports scoping, but does not replace review and validation.
@@ -282,7 +285,7 @@ The repository includes tests for core safety and correctness, including:
 - coverage mapping and scope validation
 - estimation logic
 - export and package behavior
-- IDs, schema consistency, versioning, and change impact expectations
+- ID generation, schema consistency, versioning, and change impact expectations
 
 Run the suite with:
 
@@ -290,7 +293,7 @@ Run the suite with:
 npm run test
 ```
 
-or the full verification check:
+Or run the full verification workflow:
 
 ```bash
 npm run verify
@@ -298,47 +301,49 @@ npm run verify
 
 ## Quality gate behavior
 
-The application exposes a quality gate with three core statuses:
+The application exposes a quality gate with three core states:
 
 - READY — the model is coherent and ready for export
 - REVIEW_REQUIRED — the model has warnings or minor issues
-- BLOCKED — the model is not ready because of missing or broken prerequisites
+- BLOCKED — the model is not ready because prerequisites are missing or invalid
 
-This gate is not a separate implementation of domain validation. It renders and extends the same validation logic already used in the model layer.
+This gate is not a separate validation layer. It renders and extends the same validation logic already used in the domain model.
 
-## Summary
-
-Deal Scoping Assistant is a focused decision-support tool for pre-sales scoping. It blends AI-assisted extraction with strict traceability, quality controls, and deterministic estimation so that deal teams can reason about scope with confidence and clarity instead of accepting unchecked AI output as formal requirement truth.
-
-## Submission architecture diagram
+## Production architecture diagram
 
 ```mermaid
 flowchart TB
   subgraph Browser["Browser application (src/ui)"]
-    UI["Workspaces: Intake, Requirements, Scope, Architecture, Solution, Estimation, Changes, Package"]
+    UI["Intake, Requirements, Scope, Architecture, Solution, Estimation, Changes, Package"]
     Store["Store (state.ts): single source of UI state"]
   end
-  subgraph Ingest["Requirements-ingestion layer"]
+
+  subgraph Ingest["Requirements ingestion"]
     Upload["File / paste intake (txt, md, json, csv)"]
     Env["envelope.ts: untrusted-content fencing + injection detection"]
   end
-  subgraph AI["AI orchestration layer (src/ai)"]
+
+  subgraph AI["AI orchestration (src/ai)"]
     Pipe["pipeline.ts: call, validate, resolve citations, downgrade provenance"]
     Prov{{"AiProvider interface"}}
-    Mock["Mock AI provider (default, offline)"]
+    Mock["Mock provider (default, offline)"]
     Live["Gemini provider (optional, via server proxy)"]
   end
+
   Model[("Structured scope model (domain/): requirements, assumptions, questions, risks, versions")]
+
   subgraph Engines["Deterministic engines (src/engines)"]
-    PRD["PRD + functional-scope generator"]
-    Cloud["Cloud-architecture generator + catalog (AWS / Azure / GCP)"]
-    Data["Data, integration and AI-solution planners"]
+    PRD["PRD + scope generation"]
+    Cloud["Cloud architecture + catalog"]
+    Data["Data, integration, and AI solution planning"]
     Est["Estimation: hours, timeline, ROM, confidence"]
     Trace["Traceability + coverage"]
     Impact["Change-impact analysis"]
     QG["Quality gate + cross-document consistency"]
   end
+
   Export["Export layer: Markdown package + Mermaid diagram"]
+
   UI --> Store --> Upload --> Env --> Pipe
   Pipe --> Prov
   Prov --> Mock
@@ -358,4 +363,8 @@ flowchart TB
   Impact --> Export
 ```
 
-(The same diagram is in `docs/architecture.md`.)
+The same diagram is in [docs/architecture.md](docs/architecture.md).
+
+## Summary
+
+Deal Scoping Assistant is a focused decision-support tool for pre-sales scoping. It blends AI-assisted extraction with strict traceability, quality controls, and deterministic estimation so teams can reason about scope with confidence instead of accepting unchecked AI output as formal requirement truth.
