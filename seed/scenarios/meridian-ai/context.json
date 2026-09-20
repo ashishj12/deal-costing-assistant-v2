@@ -1,0 +1,35 @@
+{
+  "id": "meridian-ai",
+  "title": "Meridian Insurance - claims assistant",
+  "shape": "AI-enabled solution",
+  "summary": "RAG over policy documents, claim classification and extraction, mandatory human decisions, GDPR and evaluation needs. Google Cloud.",
+  "customer": {
+    "customerName": "Meridian Insurance",
+    "opportunityName": "Claims Assistant",
+    "industry": "Insurance",
+    "businessObjectives": [
+      "Reduce handler time spent searching policy wording",
+      "Speed up claim triage without removing human decisions",
+      "Demonstrate GDPR-compliant AI use to the regulator"
+    ],
+    "opportunityStatus": "proposal"
+  },
+  "configuration": {
+    "cloud": "gcp",
+    "cloudSelectionMode": "explicit",
+    "expectedUsers": 350,
+    "concurrencyTier": "departmental",
+    "complianceTier": "regulated",
+    "externalSystemCount": 2,
+    "dataComplexity": "high",
+    "productivityFactor": 1,
+    "contingency": 0.2,
+    "currency": "EUR",
+    "teamCapacity": 6,
+    "targetDeadlineWeeks": 24
+  },
+  "sources": [
+    "Claims assistant business brief.txt",
+    "Steering meeting notes.md"
+  ]
+}

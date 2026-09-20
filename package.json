@@ -1,0 +1,32 @@
+{
+  "name": "deal-scoping-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-assisted deal scoping workspace: requirement intake, traceable scope model, deterministic estimation, change-impact analysis and package export.",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "npx tsx scripts/test.ts",
+    "test:vitest": "vitest run",
+    "lint": "tsc --noEmit --noUnusedLocals --noFallthroughCasesInSwitch",
+    "build": "npx tsx scripts/build.ts",
+    "dev": "npx tsx scripts/dev.ts",
+    "start": "node scripts/serve.js",
+    "verify": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "seed:export": "npx tsx scripts/export-seed.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "optionalDependencies": {
+    "docx": "^9.0.0"
+  }
+}

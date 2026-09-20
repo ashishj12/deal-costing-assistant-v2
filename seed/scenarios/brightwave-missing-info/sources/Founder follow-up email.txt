@@ -1,0 +1,7 @@
+Follow-up email from the founder
+
+The platform must support single sign-on for schools. Teachers shall be able to create classes and assign content to learners.
+
+Learners must be able to see their own progress. The system should recommend next lessons using AI where suitable.
+
+We have not chosen a cloud provider and have no technical team, so please recommend what suits us.

@@ -1,0 +1,26 @@
+Meridian Insurance - Claims Assistant
+Business requirements brief
+
+2.1 Claims handlers must be able to ask natural-language questions about policy wording, endorsements and past claim decisions and receive answers that cite the exact source document.
+
+2.2 The system must classify each incoming claim by type and urgency, and route it to the correct handling queue. Classification results must be reviewable by a handler before they take effect.
+
+2.3 The solution must extract key fields (policy number, date of loss, claimed amount, damaged items) from claim forms and attached documents and pre-populate the claims system.
+
+2.4 The solution must never approve, reject or settle a claim automatically. Every claim decision must be made and recorded by a named human handler.
+
+2.5 The assistant must not expose personal data of one policyholder to a handler who has no right to that claim. Access control must follow existing claim permissions.
+
+2.6 All personal data must be processed inside the EU and must not be used to train any external model. The company shall be able to demonstrate GDPR compliance to its regulator.
+
+2.7 The team requires an evaluation approach that measures answer accuracy, citation correctness and hallucination rate before go-live and continuously afterwards.
+
+2.8 The system must integrate with the Guidewire ClaimCenter platform through its REST APIs and with the corporate identity provider for single sign-on.
+
+2.9 Handlers shall be able to give thumbs-up or thumbs-down feedback on each answer. Feedback must be stored and reviewed monthly.
+
+2.10 Response time for a question must be under eight seconds for 95 percent of requests. The service must be available 99.5 percent during business hours.
+
+2.11 Nice to have: a fraud-indicator score on each claim. This is desirable but the business has not decided whether it is acceptable to use automated scoring.
+
+2.12 Out of scope: customer-facing chatbot access and any replacement of Guidewire ClaimCenter.

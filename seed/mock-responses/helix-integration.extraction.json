@@ -1,0 +1,320 @@
+{
+  "requirements": [
+    {
+      "type": "data",
+      "description": "Helix Retail - Order Data Integration Hub",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Helix Retail - Order Data Integration Hub",
+      "rationale": "Classified as data from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.7
+    },
+    {
+      "type": "functional",
+      "description": "Requirements extract, version 2",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Requirements extract, version 2",
+      "rationale": "Classified as functional from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "integration",
+      "description": "The platform must ingest online orders from our Shopify storefronts every minute through the Shopify Admin API and publish them to the warehouse management system.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The platform must ingest online orders from our Shopify storefronts every minute through the Shopify Admin API and publish them to the warehouse management system.",
+      "rationale": "Classified as integration from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.8500000000000001
+    },
+    {
+      "type": "integration",
+      "description": "The solution must integrate with our SAP S/4HANA finance system to post invoices and receive product master data.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The solution must integrate with our SAP S/4HANA finance system to post invoices and receive product master data.",
+      "rationale": "Classified as integration from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.8500000000000001
+    },
+    {
+      "type": "data",
+      "description": "Master data changes must be synchronised within 15 minutes.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Master data changes must be synchronised within 15 minutes.",
+      "rationale": "Classified as data from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.75
+    },
+    {
+      "type": "integration",
+      "description": "Three third-party logistics providers deliver stock files by SFTP each night.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Three third-party logistics providers deliver stock files by SFTP each night.",
+      "rationale": "Classified as integration from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.8
+    },
+    {
+      "type": "data",
+      "description": "The system shall validate, transform and load these files, and must report every rejected record back to the provider.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The system shall validate, transform and load these files, and must report every rejected record back to the provider.",
+      "rationale": "Classified as data from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.75
+    },
+    {
+      "type": "data",
+      "description": "All customer and order data must be loaded into a central analytics warehouse.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "All customer and order data must be loaded into a central analytics warehouse.",
+      "rationale": "Classified as data from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.75
+    },
+    {
+      "type": "data",
+      "description": "The data model must support daily, weekly and monthly sales reporting by region and channel.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The data model must support daily, weekly and monthly sales reporting by region and channel.",
+      "rationale": "Classified as data from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.75
+    },
+    {
+      "type": "data",
+      "description": "The platform must apply data quality rules to every inbound record, including duplicate detection, mandatory field checks and reference-data validation, and must quarantine failing records.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The platform must apply data quality rules to every inbound record, including duplicate detection, mandatory field checks and reference-data validation, and must quarantine failing",
+      "rationale": "Classified as data from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.75
+    },
+    {
+      "type": "data",
+      "description": "The solution shall keep a data lineage record showing the origin and transformations of every reporting figure.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The solution shall keep a data lineage record showing the origin and transformations of every reporting figure.",
+      "rationale": "Classified as data from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.75
+    },
+    {
+      "type": "operational",
+      "description": "Integration failures must be retried automatically and must raise an alert to the support team when retries are exhausted.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Integration failures must be retried automatically and must raise an alert to the support team when retries are exhausted.",
+      "rationale": "Classified as operational from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.8
+    },
+    {
+      "type": "non-functional",
+      "description": "Throughput must reach 120 orders per second during the November sales peak.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Throughput must reach 120 orders per second during the November sales peak.",
+      "rationale": "Classified as non-functional from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.8500000000000001
+    },
+    {
+      "type": "compliance",
+      "description": "Personal data of EU customers must remain in EU regions and must be retained for no longer than 36 months, in line with GDPR.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Personal data of EU customers must remain in EU regions and must be retained for no longer than 36 months, in line with GDPR.",
+      "rationale": "Classified as compliance from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.9
+    },
+    {
+      "type": "operational",
+      "description": "The support team needs an operations console showing integration health, queue depth and rejected records.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The support team needs an operations console showing integration health, queue depth and rejected records.",
+      "rationale": "Classified as operational from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.75
+    },
+    {
+      "type": "data",
+      "description": "The company would like a historical migration of five years of order history from the legacy database.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The company would like a historical migration of five years of order history from the legacy database.",
+      "rationale": "Classified as data from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.7
+    },
+    {
+      "type": "functional",
+      "description": "The volume is not yet known.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The volume is not yet known.",
+      "rationale": "Classified as functional from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "integration",
+      "description": "Out of scope: replacement of the Shopify storefront and any change to the SAP configuration.",
+      "priority": "wont",
+      "provenance": "out-of-scope",
+      "sourceId": "SRC-001",
+      "quote": "Out of scope: replacement of the Shopify storefront and any change to the SAP configuration.",
+      "rationale": "Classified as integration from wording in Helix RFP requirements v2.txt; priority inferred from modal verb.",
+      "confidence": 0.8500000000000001
+    },
+    {
+      "type": "functional",
+      "description": "Workshop notes - integration landscape",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "Workshop notes - integration landscape",
+      "rationale": "Classified as functional from wording in Integration workshop notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "integration",
+      "description": "Attendees: Head of Data, ERP Lead, Integration Architect",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "Attendees: Head of Data, ERP Lead, Integration Architect",
+      "rationale": "Classified as integration from wording in Integration workshop notes.md; priority inferred from modal verb.",
+      "confidence": 0.8
+    },
+    {
+      "type": "functional",
+      "description": "The legacy order database runs on an ageing Oracle instance owned by IT operations.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "The legacy order database runs on an ageing Oracle instance owned by IT operations.",
+      "rationale": "Classified as functional from wording in Integration workshop notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "integration",
+      "description": "The ERP Lead confirmed the SAP interface will be exposed through OData services, but the service catalogue is not yet published.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "The ERP Lead confirmed the SAP interface will be exposed through OData services, but the service catalogue is not yet published.",
+      "rationale": "Classified as integration from wording in Integration workshop notes.md; priority inferred from modal verb.",
+      "confidence": 0.8
+    },
+    {
+      "type": "integration",
+      "description": "The Head of Data wants a single order customer key across Shopify and SAP.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "The Head of Data wants a single order customer key across Shopify and SAP.",
+      "rationale": "Classified as integration from wording in Integration workshop notes.md; priority inferred from modal verb.",
+      "confidence": 0.8
+    },
+    {
+      "type": "functional",
+      "description": "There is currently no agreed customer identifier, which must be resolved before mapping starts.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "There is currently no agreed customer identifier, which must be resolved before mapping starts.",
+      "rationale": "Classified as functional from wording in Integration workshop notes.md; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "AWS is the preferred cloud because the analytics team already operates Amazon Redshift.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "AWS is the preferred cloud because the analytics team already operates Amazon Redshift.",
+      "rationale": "Classified as functional from wording in Integration workshop notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "integration",
+      "description": "Two of the logistics providers can only send flat files; the third has a REST API.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "Two of the logistics providers can only send flat files; the third has a REST API.",
+      "rationale": "Classified as integration from wording in Integration workshop notes.md; priority inferred from modal verb.",
+      "confidence": 0.8
+    },
+    {
+      "type": "functional",
+      "description": "The programme wants to go live before the November peak, but the date is not contractual.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "The programme wants to go live before the November peak, but the date is not contractual.",
+      "rationale": "Classified as functional from wording in Integration workshop notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    }
+  ],
+  "questions": [
+    {
+      "text": "What is the expected number of users at go-live, and the growth expectation over the first 24 months?",
+      "severity": "blocking",
+      "category": "scale",
+      "blocking": true
+    },
+    {
+      "text": "Is there an approved budget envelope or a target commercial range for this engagement?",
+      "severity": "medium",
+      "category": "commercial",
+      "blocking": false
+    },
+    {
+      "text": "For each named enterprise system, which integration interface is available and who owns it?",
+      "severity": "high",
+      "category": "integration",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    {
+      "text": "Expected user volume sits in the departmental band (up to 5,000 named users) until confirmed.",
+      "rationale": "No user volume was stated in the customer material; the estimate and architecture both depend on it."
+    },
+    {
+      "text": "Customer provides environment access, test data and named business owners within two weeks of kickoff.",
+      "rationale": "Standard delivery dependency; absence of it is the most common cause of schedule slip."
+    }
+  ],
+  "risks": [
+    {
+      "title": "Integration interfaces not yet confirmed",
+      "description": "Effort for each integration is estimated from the declared system count rather than confirmed interface contracts.",
+      "likelihood": "high",
+      "impact": "medium",
+      "mitigation": "Run an interface discovery workshop before contract signature."
+    },
+    {
+      "title": "Scale characteristics unconfirmed",
+      "description": "Architecture and non-functional testing effort both scale with the concurrency tier, which is currently assumed.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Confirm peak concurrent usage and growth profile with the customer."
+    }
+  ]
+}

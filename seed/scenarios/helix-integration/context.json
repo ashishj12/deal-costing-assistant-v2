@@ -1,0 +1,35 @@
+{
+  "id": "helix-integration",
+  "title": "Helix Retail - order data integration hub",
+  "shape": "Data / integration heavy",
+  "summary": "Shopify, SAP, three SFTP/REST logistics feeds, analytics warehouse, GDPR retention and a legacy migration of unknown volume. AWS.",
+  "customer": {
+    "customerName": "Helix Retail",
+    "opportunityName": "Order Data Integration Hub",
+    "industry": "Retail and e-commerce",
+    "businessObjectives": [
+      "Give operations one reliable, near real-time order flow across storefront, ERP and warehouse",
+      "Provide trusted daily sales reporting with full data lineage",
+      "Sustain 120 orders per second during the November peak"
+    ],
+    "opportunityStatus": "scoping"
+  },
+  "configuration": {
+    "cloud": "aws",
+    "cloudSelectionMode": "explicit",
+    "expectedUsers": 250,
+    "concurrencyTier": "enterprise",
+    "complianceTier": "regulated",
+    "externalSystemCount": 6,
+    "dataComplexity": "high",
+    "productivityFactor": 1,
+    "contingency": 0.2,
+    "currency": "GBP",
+    "teamCapacity": 8,
+    "targetDeadlineWeeks": 28
+  },
+  "sources": [
+    "Helix RFP requirements v2.txt",
+    "Integration workshop notes.md"
+  ]
+}

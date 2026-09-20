@@ -1,0 +1,65 @@
+{
+  "rateCardVersion": "2026.1",
+  "roles": [
+    "solution-architect",
+    "tech-lead",
+    "engineer",
+    "data-engineer",
+    "qa",
+    "project-manager"
+  ],
+  "hourlyRatesByCurrency": {
+    "USD": {
+      "solution-architect": 185,
+      "tech-lead": 160,
+      "engineer": 125,
+      "data-engineer": 135,
+      "qa": 95,
+      "project-manager": 130
+    },
+    "EUR": {
+      "solution-architect": 170,
+      "tech-lead": 148,
+      "engineer": 115,
+      "data-engineer": 124,
+      "qa": 88,
+      "project-manager": 120
+    },
+    "GBP": {
+      "solution-architect": 150,
+      "tech-lead": 130,
+      "engineer": 101,
+      "data-engineer": 109,
+      "qa": 77,
+      "project-manager": 105
+    },
+    "INR": {
+      "solution-architect": 6200,
+      "tech-lead": 5100,
+      "engineer": 3400,
+      "data-engineer": 3800,
+      "qa": 2400,
+      "project-manager": 3600
+    },
+    "AUD": {
+      "solution-architect": 275,
+      "tech-lead": 238,
+      "engineer": 186,
+      "data-engineer": 201,
+      "qa": 141,
+      "project-manager": 193
+    }
+  },
+  "baseHoursByComplexityBand": {
+    "S": 40,
+    "M": 120,
+    "L": 320,
+    "XL": 720
+  },
+  "uncertaintyByComplexityBand": {
+    "S": 0.2,
+    "M": 0.25,
+    "L": 0.35,
+    "XL": 0.45
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "requirements": [
+    {
+      "type": "functional",
+      "description": "Meridian Insurance - Claims Assistant",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Meridian Insurance - Claims Assistant",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "Business requirements brief",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Business requirements brief",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "Claims handlers must be able to ask natural-language questions about policy wording, endorsements and past claim decisions and receive answers that cite the exact source document.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Claims handlers must be able to ask natural-language questions about policy wording, endorsements and past claim decisions and receive answers that cite the exact source document.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "The system must classify each incoming claim by type and urgency, and route it to the correct handling queue.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The system must classify each incoming claim by type and urgency, and route it to the correct handling queue.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "Classification results must be reviewable by a handler before they take effect.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Classification results must be reviewable by a handler before they take effect.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "The solution must extract key fields (policy number, date of loss, claimed amount, damaged items) from claim forms and attached documents and pre-populate the claims system.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The solution must extract key fields (policy number, date of loss, claimed amount, damaged items) from claim forms and attached documents and pre-populate the claims system.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "The solution must never approve, reject or settle a claim automatically.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The solution must never approve, reject or settle a claim automatically.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "Every claim decision must be made and recorded by a named human handler.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Every claim decision must be made and recorded by a named human handler.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "data",
+      "description": "The assistant must not expose personal data of one policyholder to a handler who has no right to that claim.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The assistant must not expose personal data of one policyholder to a handler who has no right to that claim.",
+      "rationale": "Classified as data from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.75
+    },
+    {
+      "type": "functional",
+      "description": "Access control must follow existing claim permissions.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Access control must follow existing claim permissions.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "data",
+      "description": "All personal data must be processed inside the EU and must not be used to train any external model.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "All personal data must be processed inside the EU and must not be used to train any external model.",
+      "rationale": "Classified as data from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.75
+    },
+    {
+      "type": "compliance",
+      "description": "The company shall be able to demonstrate GDPR compliance to its regulator.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The company shall be able to demonstrate GDPR compliance to its regulator.",
+      "rationale": "Classified as compliance from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.9
+    },
+    {
+      "type": "functional",
+      "description": "The team requires an evaluation approach that measures answer accuracy, citation correctness and hallucination rate before go-live and continuously afterwards.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The team requires an evaluation approach that measures answer accuracy, citation correctness and hallucination rate before go-live and continuously afterwards.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "The system must integrate with the Guidewire ClaimCenter platform through its REST APIs and with the corporate identity provider for single sign-on.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The system must integrate with the Guidewire ClaimCenter platform through its REST APIs and with the corporate identity provider for single sign-on.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "Handlers shall be able to give thumbs-up or thumbs-down feedback on each answer.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Handlers shall be able to give thumbs-up or thumbs-down feedback on each answer.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "Feedback must be stored and reviewed monthly.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Feedback must be stored and reviewed monthly.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "non-functional",
+      "description": "Response time for a question must be under eight seconds for 95 percent of requests.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Response time for a question must be under eight seconds for 95 percent of requests.",
+      "rationale": "Classified as non-functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.8500000000000001
+    },
+    {
+      "type": "functional",
+      "description": "The service must be available 99.5 percent during business hours.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The service must be available 99.5 percent during business hours.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "Nice to have: a fraud-indicator score on each claim.",
+      "priority": "could",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Nice to have: a fraud-indicator score on each claim.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "This is desirable but the business has not decided whether it is acceptable to use automated scoring.",
+      "priority": "could",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "This is desirable but the business has not decided whether it is acceptable to use automated scoring.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "Out of scope: customer-facing chatbot access and any replacement of Guidewire ClaimCenter.",
+      "priority": "wont",
+      "provenance": "out-of-scope",
+      "sourceId": "SRC-001",
+      "quote": "Out of scope: customer-facing chatbot access and any replacement of Guidewire ClaimCenter.",
+      "rationale": "Classified as functional from wording in Claims assistant business brief.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "data",
+      "description": "The Chief Claims Officer stated that Google Cloud is the approved platform because Vertex AI is already covered by the group data-protection assessment.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "The Chief Claims Officer stated that Google Cloud is the approved platform because Vertex AI is already covered by the group data-protection assessment.",
+      "rationale": "Classified as data from wording in Steering meeting notes.md; priority inferred from modal verb.",
+      "confidence": 0.7
+    },
+    {
+      "type": "non-functional",
+      "description": "About 350 claims handlers will use the assistant, with roughly 40 concurrent at peak.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "About 350 claims handlers will use the assistant, with roughly 40 concurrent at peak.",
+      "rationale": "Classified as non-functional from wording in Steering meeting notes.md; priority inferred from modal verb.",
+      "confidence": 0.8
+    },
+    {
+      "type": "functional",
+      "description": "The policy archive holds about 2 million pages of PDF and Word documents in a document management system.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "The policy archive holds about 2 million pages of PDF and Word documents in a document management system.",
+      "rationale": "Classified as functional from wording in Steering meeting notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "Access to that system has not yet been agreed.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "Access to that system has not yet been agreed.",
+      "rationale": "Classified as functional from wording in Steering meeting notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "The legal team is worried about hallucinated policy wording.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "The legal team is worried about hallucinated policy wording.",
+      "rationale": "Classified as functional from wording in Steering meeting notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "They asked that answers without a supporting source are shown as \"no answer found\".",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "They asked that answers without a supporting source are shown as \"no answer found\".",
+      "rationale": "Classified as functional from wording in Steering meeting notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    }
+  ],
+  "questions": [
+    {
+      "text": "What is the expected number of users at go-live, and the growth expectation over the first 24 months?",
+      "severity": "blocking",
+      "category": "scale",
+      "blocking": true
+    },
+    {
+      "text": "Is there an approved budget envelope or a target commercial range for this engagement?",
+      "severity": "medium",
+      "category": "commercial",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    {
+      "text": "Expected user volume sits in the departmental band (up to 5,000 named users) until confirmed.",
+      "rationale": "No user volume was stated in the customer material; the estimate and architecture both depend on it."
+    },
+    {
+      "text": "Customer provides environment access, test data and named business owners within two weeks of kickoff.",
+      "rationale": "Standard delivery dependency; absence of it is the most common cause of schedule slip."
+    }
+  ],
+  "risks": [
+    {
+      "title": "Integration interfaces not yet confirmed",
+      "description": "Effort for each integration is estimated from the declared system count rather than confirmed interface contracts.",
+      "likelihood": "high",
+      "impact": "medium",
+      "mitigation": "Run an interface discovery workshop before contract signature."
+    },
+    {
+      "title": "Scale characteristics unconfirmed",
+      "description": "Architecture and non-functional testing effort both scale with the concurrency tier, which is currently assumed.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Confirm peak concurrent usage and growth profile with the customer."
+    }
+  ]
+}

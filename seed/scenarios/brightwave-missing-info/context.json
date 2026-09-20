@@ -1,0 +1,33 @@
+{
+  "id": "brightwave-missing-info",
+  "title": "Brightwave Education - learner platform",
+  "shape": "Important information missing",
+  "summary": "Vague call notes: no user volume, deadline, budget, cloud or integration detail. Expect many questions, assumptions and low confidence.",
+  "customer": {
+    "customerName": "Brightwave Education",
+    "opportunityName": "Learner Engagement Platform",
+    "industry": "Education technology",
+    "businessObjectives": [
+      "Launch a learner platform serving schools and individuals"
+    ],
+    "opportunityStatus": "qualifying"
+  },
+  "configuration": {
+    "cloud": null,
+    "cloudSelectionMode": "recommended",
+    "expectedUsers": 0,
+    "concurrencyTier": "pilot",
+    "complianceTier": "standard",
+    "externalSystemCount": 0,
+    "dataComplexity": "medium",
+    "productivityFactor": 1,
+    "contingency": 0.2,
+    "currency": "USD",
+    "teamCapacity": 4,
+    "targetDeadlineWeeks": null
+  },
+  "sources": [
+    "Founder call notes.md",
+    "Founder follow-up email.txt"
+  ]
+}

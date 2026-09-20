@@ -1,0 +1,240 @@
+{
+  "requirements": [
+    {
+      "type": "functional",
+      "description": "Brightwave Education - Learner Engagement Platform",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Brightwave Education - Learner Engagement Platform",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "Notes from the first call with the founder",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Notes from the first call with the founder",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "We want a modern platform where learners can study, track progress and get help.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "We want a modern platform where learners can study, track progress and get help.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "It should be easy to use and fast.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "It should be easy to use and fast.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "We would like to use AI in some way to make it more personal.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "We would like to use AI in some way to make it more personal.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "The platform must work for schools and for individual learners.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The platform must work for schools and for individual learners.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "We may need to connect to some school systems.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "We may need to connect to some school systems.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "Teachers should be able to see how their classes are doing.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Teachers should be able to see how their classes are doing.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "We are thinking about mobile as well.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "We are thinking about mobile as well.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "Security is important because children may use it.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Security is important because children may use it.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "We would like it delivered soon.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "We would like it delivered soon.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "Payments should be supported if we decide to charge individuals.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "Payments should be supported if we decide to charge individuals.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "The budget is still being discussed internally.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-001",
+      "quote": "The budget is still being discussed internally.",
+      "rationale": "Classified as functional from wording in Founder call notes.md; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "functional",
+      "description": "Follow-up email from the founder",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "Follow-up email from the founder",
+      "rationale": "Classified as functional from wording in Founder follow-up email.txt; priority inferred from modal verb.",
+      "confidence": 0.6
+    },
+    {
+      "type": "operational",
+      "description": "The platform must support single sign-on for schools.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "The platform must support single sign-on for schools.",
+      "rationale": "Classified as operational from wording in Founder follow-up email.txt; priority inferred from modal verb.",
+      "confidence": 0.8
+    },
+    {
+      "type": "functional",
+      "description": "Teachers shall be able to create classes and assign content to learners.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "Teachers shall be able to create classes and assign content to learners.",
+      "rationale": "Classified as functional from wording in Founder follow-up email.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "Learners must be able to see their own progress.",
+      "priority": "must",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "Learners must be able to see their own progress.",
+      "rationale": "Classified as functional from wording in Founder follow-up email.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "The system should recommend next lessons using AI where suitable.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "The system should recommend next lessons using AI where suitable.",
+      "rationale": "Classified as functional from wording in Founder follow-up email.txt; priority inferred from modal verb.",
+      "confidence": 0.65
+    },
+    {
+      "type": "functional",
+      "description": "We have not chosen a cloud provider and have no technical team, so please recommend what suits us.",
+      "priority": "should",
+      "provenance": "customer-stated",
+      "sourceId": "SRC-002",
+      "quote": "We have not chosen a cloud provider and have no technical team, so please recommend what suits us.",
+      "rationale": "Classified as functional from wording in Founder follow-up email.txt; priority inferred from modal verb.",
+      "confidence": 0.6
+    }
+  ],
+  "questions": [
+    {
+      "text": "What is the expected number of users at go-live, and the growth expectation over the first 24 months?",
+      "severity": "blocking",
+      "category": "scale",
+      "blocking": true
+    },
+    {
+      "text": "Which regulatory regimes and data residency constraints apply to this workload?",
+      "severity": "high",
+      "category": "compliance",
+      "blocking": true
+    },
+    {
+      "text": "Is there a fixed go-live date or an external event the delivery must land before?",
+      "severity": "high",
+      "category": "delivery",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    {
+      "text": "Expected user volume sits in the departmental band (up to 5,000 named users) until confirmed.",
+      "rationale": "No user volume was stated in the customer material; the estimate and architecture both depend on it."
+    },
+    {
+      "text": "Customer provides environment access, test data and named business owners within two weeks of kickoff.",
+      "rationale": "Standard delivery dependency; absence of it is the most common cause of schedule slip."
+    }
+  ],
+  "risks": [
+    {
+      "title": "Integration interfaces not yet confirmed",
+      "description": "Effort for each integration is estimated from the declared system count rather than confirmed interface contracts.",
+      "likelihood": "high",
+      "impact": "medium",
+      "mitigation": "Run an interface discovery workshop before contract signature."
+    },
+    {
+      "title": "Scale characteristics unconfirmed",
+      "description": "Architecture and non-functional testing effort both scale with the concurrency tier, which is currently assumed.",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Confirm peak concurrent usage and growth profile with the customer."
+    }
+  ]
+}

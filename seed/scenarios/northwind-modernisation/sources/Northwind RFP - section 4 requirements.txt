@@ -1,0 +1,28 @@
+Northwind Logistics - Carrier Portal Modernisation
+Request for proposal extract, section 4: solution requirements
+
+4.1 The platform must allow carrier partners to self-register, submit compliance documentation and track approval status without contacting our operations team.
+
+4.2 Dispatchers shall be able to create, amend and cancel shipment bookings, and the system must retain a full audit trail of every amendment including the user, timestamp and prior value.
+
+4.3 The solution must integrate bidirectionally with our existing SAP S/4HANA instance for master data and financial postings. The interface contract is owned by our ERP team and has not yet been agreed.
+
+4.4 The portal must surface near real-time shipment status to carriers and to the customer service desk. Status latency of more than 60 seconds is not acceptable during business hours.
+
+4.5 The system shall enforce role-based access control with separate roles for carrier administrator, carrier user, dispatcher, finance and system administrator.
+
+4.6 All authentication must use single sign-on federated with our corporate identity provider. Carrier users authenticate with a separate external identity flow including multi-factor authentication.
+
+4.7 The platform must retain shipment and audit records for seven years in line with our regulatory retention obligation, and records must be immutable once written.
+
+4.8 The solution should provide an operational dashboard showing booking volumes, exception rates and carrier performance against agreed service levels.
+
+4.9 Reporting data should be available for export to our existing analytics environment. A nightly batch is acceptable.
+
+4.10 The system must remain available during European business hours with a target availability of 99.9 percent measured monthly.
+
+4.11 Nice to have: a mobile view for drivers to confirm pickup and delivery events. This could be delivered in a later phase.
+
+4.12 Automated document classification of uploaded compliance certificates would reduce manual review effort and is desirable if it can be delivered within the initial budget.
+
+4.13 Out of scope: replacement of the existing warehouse management system. This will not be part of this engagement.

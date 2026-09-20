@@ -1,0 +1,75 @@
+{
+  "defaults": {
+    "cloud": "azure",
+    "cloudSelectionMode": "explicit",
+    "expectedUsers": 4200,
+    "concurrencyTier": "departmental",
+    "complianceTier": "regulated",
+    "externalSystemCount": 2,
+    "dataComplexity": "high",
+    "productivityFactor": 1,
+    "contingency": 0.2,
+    "currency": "EUR",
+    "teamCapacity": 7,
+    "targetDeadlineWeeks": 30
+  },
+  "perScenario": {
+    "northwind-modernisation": {
+      "cloud": "azure",
+      "cloudSelectionMode": "explicit",
+      "expectedUsers": 4200,
+      "concurrencyTier": "departmental",
+      "complianceTier": "regulated",
+      "externalSystemCount": 2,
+      "dataComplexity": "high",
+      "productivityFactor": 1,
+      "contingency": 0.2,
+      "currency": "EUR",
+      "teamCapacity": 7,
+      "targetDeadlineWeeks": 30
+    },
+    "helix-integration": {
+      "cloud": "aws",
+      "cloudSelectionMode": "explicit",
+      "expectedUsers": 250,
+      "concurrencyTier": "enterprise",
+      "complianceTier": "regulated",
+      "externalSystemCount": 6,
+      "dataComplexity": "high",
+      "productivityFactor": 1,
+      "contingency": 0.2,
+      "currency": "GBP",
+      "teamCapacity": 8,
+      "targetDeadlineWeeks": 28
+    },
+    "meridian-ai": {
+      "cloud": "gcp",
+      "cloudSelectionMode": "explicit",
+      "expectedUsers": 350,
+      "concurrencyTier": "departmental",
+      "complianceTier": "regulated",
+      "externalSystemCount": 2,
+      "dataComplexity": "high",
+      "productivityFactor": 1,
+      "contingency": 0.2,
+      "currency": "EUR",
+      "teamCapacity": 6,
+      "targetDeadlineWeeks": 24
+    },
+    "brightwave-missing-info": {
+      "cloud": null,
+      "cloudSelectionMode": "recommended",
+      "expectedUsers": 0,
+      "concurrencyTier": "pilot",
+      "complianceTier": "standard",
+      "externalSystemCount": 0,
+      "dataComplexity": "medium",
+      "productivityFactor": 1,
+      "contingency": 0.2,
+      "currency": "USD",
+      "teamCapacity": 4,
+      "targetDeadlineWeeks": null
+    }
+  },
+  "formula": "ROM = sum(workstream hours x role mix x hourly rate) x (1 + contingency); effort range = adjusted hours +/- band uncertainty"
+}
